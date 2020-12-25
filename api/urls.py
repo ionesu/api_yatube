@@ -8,7 +8,10 @@ from .views import CommentViewSet, PostViewSet
 router = DefaultRouter()
 
 router.register('posts', PostViewSet)
-router.register(r'posts/(?P<post_id>[0-9]+)/comments', CommentViewSet, basename='CommentViewSet')
+router.register(
+    r'posts/(?P<post_id>[0-9]+)/comments',
+    CommentViewSet,
+    basename='CommentViewSet')
 
 urlpatterns = [
     path('v1/', include(router.urls)),
